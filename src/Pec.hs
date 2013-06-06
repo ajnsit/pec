@@ -8,12 +8,12 @@ module Main(main) where
 
 import Control.Monad
 import Data.List
-import Development.Shake hiding (getDirectoryContents)
+import Development.Shake hiding (getDirectoryContents, doesDirectoryExist)
 import Development.Shake.FilePath
 import Grm.Prims
 import Pec.PUtil
 import System.Console.CmdArgs
-import System.Directory hiding (readable)
+import System.Directory(getDirectoryContents, removeDirectoryRecursive, removeFile, getCurrentDirectory, doesDirectoryExist)
 
 data Args = Args
   { targets :: [String]
